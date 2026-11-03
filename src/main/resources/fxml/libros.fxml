@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="presentacion.LibroFormulario"
+      spacing="10" alignment="TOP_CENTER">
+    <padding>
+        <Insets top="16" right="16" bottom="16" left="16"/>
+    </padding>
+
+    <HBox spacing="20" alignment="CENTER_LEFT">
+        <Label text="Libros" style="-fx-font-size: 24px;"/>
+        <Button text="Volver a Prestamos" onAction="#onVolver"/>
+    </HBox>
+
+    <HBox spacing="8">
+        <Label text="ISBN" prefWidth="140"/>
+        <Label text="Titulo" prefWidth="180"/>
+        <Label text="Autor" prefWidth="140"/>
+        <Label text="Nacionalidad" prefWidth="100"/>
+        <Label text="Fisico" prefWidth="60"/>
+        <Label text="Electronico" prefWidth="80"/>
+    </HBox>
+
+    <ScrollPane fitToWidth="true" hbarPolicy="NEVER"
+                vbarPolicy="AS_NEEDED" VBox.vgrow="ALWAYS">
+        <content>
+            <VBox fx:id="contenedorFilas" spacing="8"/>
+        </content>
+    </ScrollPane>
+
+    <Button text="+" onAction="#onAgregar"/>
+    <Button text="Cancelar" onAction="#onCancelar"/>
+    <Button text="Guardar" onAction="#onGuardar"/>
+</VBox>

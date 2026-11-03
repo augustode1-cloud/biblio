@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="presentacion.NuevoLibroFormulario"
+      spacing="10" alignment="CENTER">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="Nuevo Libro"/>
+
+    <Label text="Titulo"/>
+    <TextField fx:id="tituloField"/>
+
+    <Label text="ISBN"/>
+    <TextField fx:id="isbnField"/>
+
+    <Label text="Formato"/>
+    <ComboBox fx:id="formatoCombo"/>
+
+    <Label text="Autor"/>
+    <TextField fx:id="autorField"/>
+
+    <Label text="Nacionalidad"/>
+    <TextField fx:id="nacionalidadField"/>
+
+    <Label text="Cantidad"/>
+    <TextField fx:id="cantidadField" text="1"/>
+
+    <Button text="Aceptar" onAction="#onAceptar"/>
+    <Button text="Cancelar" onAction="#onCancelar"/>
+</VBox>
