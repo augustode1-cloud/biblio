@@ -30,6 +30,7 @@ public class SocioFormulario
     private void cargar()
     {
         try {
+	    fachada.sancionar();
             ArrayList<eSocio> lista = fachada.listarSocios();
             mostrar(lista);
         } catch (SQLException e) {

@@ -126,4 +126,9 @@ public class Fachada
     {
         dEmp.alta(empleado);
     }
+
+    public void sancionar() throws SQLException
+    {
+        //TODO
+    }
 }

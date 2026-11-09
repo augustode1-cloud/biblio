@@ -31,6 +31,16 @@ public class pSocio
         conexion.ejecutarSQL(sb2.toString());
     }
 
+    public void sancionar(String cedula)
+    {
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append("UPDATE socios SET sancionado = 1");
+        sb2.append(" WHERE cedula = '");
+        sb2.append(cedula);
+        sb2.append("';");
+        conexion.ejecutarSQL(sb2.toString());
+    }
+
     public void modificar(eSocio s)
     {
         StringBuilder sb1 = new StringBuilder();

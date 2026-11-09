@@ -39,6 +39,14 @@ public class dSocio
         return unP.listar();
     }
 
+    public void sancionar(String cedula)
+    {
+        if (cedula == null || cedula.trim().isEmpty()) {
+            throw new IllegalArgumentException("cedula obligatoria");
+        }
+        unP.sancionar(cedula);
+    }
+
     private void validar(eSocio s)
     {
         if (s.getCedula() == null || s.getCedula().trim().isEmpty()) {
