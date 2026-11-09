@@ -66,12 +66,13 @@ public class NuevoPrestamoFormulario
         }
         String isbn = sel.split(" - ")[0];
         try {
-            ArrayList<eCopia> copias = fachada.listarCopias();
+            //ArrayList<eCopia> copias = fachada.listarCopias();
+            ArrayList<eCopia> copias = fachada.listarCopiasPorISBN(isbn);
             for (eCopia c : copias) {
-                if (c.getIsbn().equals(isbn)) {
+                //if (c.getIsbn().equals(isbn)) {
                     copiaCombo.getItems().add(
                             String.valueOf(c.getIdCopia()));
-                }
+                //}
             }
         } catch (SQLException e) {
             e.printStackTrace();

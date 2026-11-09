@@ -57,6 +57,28 @@ public class pCopia
         return lista;
     }
 
+
+    public ArrayList<eCopia> listarPorISBN(String isbn) throws SQLException
+    {
+        ArrayList<eCopia> lista = new ArrayList<>();
+        StringBuilder sb = new StringBuilder();
+        sb.append("SELECT ISBN, idCopia, formato FROM copias WHERE ISBN = '");
+        sb.append(isbn);
+        sb.append("'");
+	String sql = sb.toString();
+        ResultSet rs = conexion.ejecutarConsulta(sql);
+        while (rs != null && rs.next()) {
+            eCopia c = new eCopia();
+            c.setIsbn(rs.getString("ISBN"));
+            c.setIdCopia(rs.getInt("idCopia"));
+            c.setFormato(FormatoCopia.valueOf(rs.getString("formato")));
+            lista.add(c);
+        }
+        conexion.cerrar();
+        return lista;
+    }
+
+
     public int contarPorIsbn(String isbn) throws SQLException
     {
         StringBuilder sb = new StringBuilder();

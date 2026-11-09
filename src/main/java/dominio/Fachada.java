@@ -69,6 +69,13 @@ public class Fachada
         dLib.eliminar(isbn);
     }
 
+
+    public ArrayList<eCopia> listarCopiasPorISBN(String isbn)
+		    				throws SQLException
+    {
+        return dCop.listarPorISBN(isbn);
+    }
+
     public ArrayList<eCopia> listarCopias() throws SQLException
     {
         return dCop.listar();

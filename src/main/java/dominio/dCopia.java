@@ -53,6 +53,13 @@ public class dCopia
         return unP.listar();
     }
 
+
+    public ArrayList<eCopia> listarPorISBN(String isbn) throws SQLException
+    {
+        return unP.listarPorISBN(isbn);
+    }
+
+
     public int contarPorIsbn(String isbn) throws SQLException
     {
         return unP.contarPorIsbn(isbn);
