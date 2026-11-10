@@ -79,4 +79,27 @@ public class pPrestamo
         conexion.cerrar();
         return lista;
     }
+
+    public ArrayList<String> listarSociosPrestamoVenc(String strFechaLimite)
+                                                           throws SQLException
+    {
+        ArrayList<String> lista = new ArrayList<>();
+        StringBuilder sb = new StringBuilder();
+        sb.append("SELECT DISTINCT ciSocio ");
+        sb.append("FROM prestamos ");
+        sb.append("WHERE fechaDevolucion IS NULL ");
+        sb.append("AND fechaPrestamo < '");
+        sb.append(strFechaLimite);
+        sb.append("';");
+	String sql = sb.toString();
+
+
+        ResultSet rs = conexion.ejecutarConsulta(sql);
+        while (rs != null && rs.next()) {
+            String s = rs.getString("ciSocio");
+            lista.add(s);
+        }
+        conexion.cerrar();
+        return lista;
+    }
 }

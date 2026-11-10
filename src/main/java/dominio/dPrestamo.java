@@ -34,6 +34,14 @@ public class dPrestamo
         unP.eliminar(id);
     }
 
+
+    public ArrayList<String> listarSociosPrestamoVenc(String strFechaLimite)
+		                                        throws SQLException
+    {
+        return unP.listarSociosPrestamoVenc(strFechaLimite);
+    }
+
+
     public ArrayList<ePrestamo> listar() throws SQLException
     {
         return unP.listar();

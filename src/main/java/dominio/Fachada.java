@@ -9,9 +9,11 @@ import entidad.eSocio;
 import entidad.FormatoCopia;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.time.LocalDate;
 
 public class Fachada
 {
+    private static final int DIAS_VENCIMIENTO = 15;
     private dAutor dAut;
     private dLibro dLib;
     private dCopia dCop;
@@ -129,6 +131,13 @@ public class Fachada
 
     public void sancionar() throws SQLException
     {
-        //TODO
+	LocalDate fechaLimite = LocalDate.now().minusDays(DIAS_VENCIMIENTO);
+	String strFechaLimite = fechaLimite.toString();
+        ArrayList<String> ciSociosVenc =
+		dPre.listarSociosPrestamoVenc(strFechaLimite);
+	for (String ci : ciSociosVenc) {
+            dSoc.sancionar(ci);
+	}
+
     }
 }
